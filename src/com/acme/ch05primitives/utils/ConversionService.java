@@ -1,16 +1,19 @@
 package com.acme.ch05primitives.utils;
 
-public class ConversionServices {
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
+public class ConversionService {
 
 	/**
-	 * weight conversion rates
+	 * weight conversion rate
 	 */
 	// conversion rate for 1 kilogram to pounds
-	public static double kilogramToPounds = 2.2046;
+	public static BigDecimal kilogramToPounds = new BigDecimal(2.2046);
 	// conversion rate for 1 kilogram to grams
-	public static int kilogramToGrams = 1000;
+	public static BigInteger kilogramToGrams = new BigInteger("1000");
 	// conversion rate for 1 kilogram to weight ounces
-	public static double kilogramToOunces = 35.274;
+	public static BigDecimal kilogramToOunces = new BigDecimal(35.274);
 
 	/**
 	 * volume conversion rates
@@ -24,16 +27,16 @@ public class ConversionServices {
 	// conversion rate for 1 liter to milliliters
 	public static short litertoMilliliters = 1_000;
 
-	public static double pounds(double kilograms) {
-		return kilograms * kilogramToPounds;
+	public static BigDecimal pounds(BigDecimal kilograms) {
+		return kilograms.multiply(kilogramToPounds);
 	}
 
-	public static int grams(int kilograms) {
-		return kilograms * kilogramToGrams;
+	public static BigInteger grams(BigInteger kilograms) {
+		return kilograms.multiply(kilogramToGrams);
 	}
 
-	public static double ounces(double kilograms) {
-		return kilograms * kilogramToOunces;
+	public static BigDecimal ounces(BigDecimal kilograms) {
+		return kilograms.multiply(kilogramToOunces);
 	}
 
 	public static float fluidOunces(float liters) {

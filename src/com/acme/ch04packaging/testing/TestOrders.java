@@ -36,7 +36,7 @@ public class TestOrders {
 
         MyDate myDate = new MyDate(10,27,2017);
 
-        Order o3 = new Order(myDate,15700,"Popescu","phone",1);
+        Order o3 = new Order(myDate,15700,"Popescu","phone",175);
         o3.printObjectsCounter();
         o3.printStaticCounter();
         o3.printNormalCounter();
