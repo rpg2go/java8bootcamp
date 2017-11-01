@@ -23,13 +23,15 @@ public class Order {
 
     static {
         System.out.println("Run code from static bloc") ;
-        System.out.println("\n");
         staticCounter++;
     }
-
+    
+    {
+    	System.out.println("\nBuild new Order object\n");
+    }
+    
     {
         System.out.println("Run code from normal bloc") ;
-        System.out.println("\n");
         normalCounter++;
     }
 
@@ -142,12 +144,16 @@ public class Order {
 				break;
 			}
     	}
-		return discount;
+		return discount / 100;
     }
        
     public double computeTotal() {
     	double amount;
-    	amount = orderAmount  - getDiscount() + taxRate*orderAmount;
+
+    	amount = orderAmount  - orderAmount * getDiscount();
+    	if  (amount <= 1500) {
+    		 amount = amount + computeTax();
+    	}
     	return amount;
     }
 }
