@@ -7,6 +7,8 @@ public class Good {
 	private UnitOfMeasureType unitofMeasure;
 	private boolean flammable;
 	private double weightPerUoM;
+	
+	public static final String GOOD_SERIAL_NO = "123abc456def";
 
 	public String getName() {
 		return name;
@@ -77,5 +79,17 @@ public class Good {
 
 	public double weight() {
 		return volum() * weightPerUoM;
+	}
+	
+	public final String getSerialNo() {
+		return GOOD_SERIAL_NO;
+	}
+	
+	public static String printSerialNo() {
+		return GOOD_SERIAL_NO;
+	}
+	
+	public final boolean canShipViaPostOffice() {
+		return this.isFlammable() && this.weightPerUoM < 200;
 	}
 }

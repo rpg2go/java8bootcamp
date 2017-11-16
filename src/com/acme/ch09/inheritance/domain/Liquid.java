@@ -23,7 +23,15 @@ public class Liquid extends Good {
 	
 	@Override
 	public String toString() {
-		return super.toString() + " (liquid) " + volum() + getUnitofMeasure();
+		return super.toString() + " (liquid) " + volum() + " " + getUnitofMeasure();
 	}
+	
+//	public String getSerialNo() {
+//		return new String("Liquid serial#no");
+//	}
+	
+//	public String printSerialNo() {
+//		return new String("Liquid serial#no");
+//	}
 
 }
