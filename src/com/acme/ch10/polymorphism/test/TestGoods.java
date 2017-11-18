@@ -1,6 +1,6 @@
-package com.acme.ch09.inheritance.test;
+package com.acme.ch10.polymorphism.test;
 
-import com.acme.ch09.inheritance.domain.*;
+import com.acme.ch10.polymorphism.domain.*;
 
 public class TestGoods {
 
