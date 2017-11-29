@@ -66,8 +66,8 @@ public class TestGood {
 	}
 
 	/**
-	 * Remove an object from a hash set collection
-	 * @param good
+	 * Remove an object from a hash set
+	 * @param water
 	 * @param hashSet
 	 */
 	private static void removeObject(Good good, Set<Good> hashSet) {
@@ -85,7 +85,7 @@ public class TestGood {
 	}
 
 	/**
-	 * Add a new object to a hash set collection
+	 * Add a new object to a hash set 
 	 * @param good
 	 * @param hashSet
 	 */
