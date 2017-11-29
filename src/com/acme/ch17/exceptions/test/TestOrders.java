@@ -1,18 +1,19 @@
-package com.acme.ch13.datetime.test;
-import com.acme.ch13.datetime.domain.Order;
-import com.acme.ch13.datetime.domain.Solid;
+package com.acme.ch17.exceptions.test;
+import com.acme.ch17.exceptions.domain.Order;
+import com.acme.ch17.exceptions.domain.Solid;
 
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
-import com.acme.ch13.datetime.domain.Liquid;
-import com.acme.ch13.datetime.domain.UnitOfMeasureType;
-import com.acme.ch13.datetime.domain.MyDate;
+import com.acme.ch17.exceptions.domain.Liquid;
+import com.acme.ch17.exceptions.domain.UnitOfMeasureType;
+import com.acme.ch17.exceptions.util.InvalidDateException;
+import com.acme.ch17.exceptions.domain.MyDate;
 
 public class TestOrders {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidDateException {
     	    	
     	LocalDate crtDate = LocalDate.now();
     	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd MMM yyyy hh:mm:ss");
@@ -41,7 +42,7 @@ public class TestOrders {
         System.out.println("Serial #No is " + glue.getSerialNo());
  
         
-        MyDate hammerDate = new MyDate(25, 10, 2017 );
+        MyDate hammerDate = new MyDate(02, 01, 2017 );
         Solid hammerType = new Solid( "Acme Hammer", 281, 0.3, UnitOfMeasureType.CUBIC_METER, false, 100, 0.25, 0.3 );
         Order hammer = new Order( hammerDate, 10.00, "Wile E Coyote", hammerType, 10 );
 //		Order.setRushable((orderDate, orderAmount) -> {
@@ -51,7 +52,7 @@ public class TestOrders {
 //			return now.isAfter(ldoPlus30);
 //		});
         
-        MyDate bookDate = new MyDate(01, 10, 2017 );
+        MyDate bookDate = new MyDate(25, 12, 2017 );
         Solid bookType = new Solid( "Acme Book", 125, 0.3, UnitOfMeasureType.CUBIC_METER, true, 100, 0.25, 0.3 );
         Order book = new Order( bookDate, 15.00,  "Java Date & Time Lab Practice", bookType, 5);
 		Order.setRushable((orderDate, orderAmount) -> {
