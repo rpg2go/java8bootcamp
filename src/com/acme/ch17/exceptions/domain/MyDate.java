@@ -1,10 +1,7 @@
 package com.acme.ch17.exceptions.domain;
 
-<<<<<<< HEAD
 import com.acme.ch17.exceptions.util.InvalidDateException;
 
-=======
->>>>>>> fe512f5f80547992c15809337a099f63c97dc165
 public class MyDate implements Comparable<MyDate>{
 	private int day;
 	private int year;
@@ -19,40 +16,20 @@ public class MyDate implements Comparable<MyDate>{
 		return day;
 	}
 
-<<<<<<< HEAD
 	public void setDay(int day) throws InvalidDateException {
 		valid2 (day, this.month, this.year);
-=======
-	public void setDay(int day) {
-		if (valid (day, this.month, this.year)) {
-			this.day = day;
-		}
->>>>>>> fe512f5f80547992c15809337a099f63c97dc165
 	}
-
+	
 	public int getMonth() {
 		return month;
 	}
 
-<<<<<<< HEAD
 	public void setMonth(int month) throws InvalidDateException {
 		valid2 (this.day, month, this.year);
 	}
 
 	public void setYear(int year) throws InvalidDateException {
 		valid2 (this.day, this.month, year);
-=======
-	public void setMonth(int month) {
-		if (valid (this.day, month, this.year)) {
-			this.month = month;
-		}
-	}
-
-	public void setYear(int year) {
-		if (valid (this.day, this.month, year)) {
-			this.year = year;
-		}
->>>>>>> fe512f5f80547992c15809337a099f63c97dc165
 	}
 	
 	public int getYear() {
@@ -60,17 +37,8 @@ public class MyDate implements Comparable<MyDate>{
 	}
 
 	// use the parameters of m, d and y to set the three attributes
-<<<<<<< HEAD
 	public MyDate(int d, int m, int y) throws InvalidDateException {
-		valid2 (this.day, month, this.year);
-=======
-	public MyDate(int d, int m, int y) {
-		if (valid(d, m, y)) {
-			day = d;
-			month = m;
-			year = y;
-		}
->>>>>>> fe512f5f80547992c15809337a099f63c97dc165
+		valid2 (d, m, y);
 	}
 
 	@Override
@@ -116,8 +84,6 @@ public class MyDate implements Comparable<MyDate>{
 		return true;
 	}
 	
-<<<<<<< HEAD
-	
 	public void valid2(int day, int month, int year) throws InvalidDateException {
 		if (day < 1 || day > 31 || month < 1 || month > 12) {
 			throw new InvalidDateException(day,month,year);
@@ -142,8 +108,7 @@ public class MyDate implements Comparable<MyDate>{
 			}
 		}
 	}
-=======
->>>>>>> fe512f5f80547992c15809337a099f63c97dc165
+
 	@Override
 	public boolean equals(Object newDate) {
 		//avoid java.lang.ClassCastException 

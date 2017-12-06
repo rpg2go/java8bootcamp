@@ -4,10 +4,8 @@ import java.time.LocalDate;
 
 import com.acme.ch17.exceptions.domain.MyDate;
 import com.acme.ch17.exceptions.util.HolidayOrdersNotAllowedException;
-<<<<<<< HEAD
 import com.acme.ch17.exceptions.util.InvalidDateException;
-=======
->>>>>>> fe512f5f80547992c15809337a099f63c97dc165
+
 /**
  * Order class is used to interact with customers;
  */
@@ -59,14 +57,9 @@ public class Order {
      * @param c Customer
      * @param p Product
      * @param q Quantity
-<<<<<<< HEAD
      * @throws InvalidDateException 
      */
     public Order(MyDate d, double amt, String c, Product p, int q) throws InvalidDateException {
-=======
-     */
-    public Order(MyDate d, double amt, String c, Product p, int q) {
->>>>>>> fe512f5f80547992c15809337a099f63c97dc165
     	try {
     		setOrderDate(d);
     	}
@@ -198,11 +191,7 @@ public class Order {
 		return orderDate;
 	}
 
-<<<<<<< HEAD
 	public void setOrderDate(MyDate orderDate) throws HolidayOrdersNotAllowedException, InvalidDateException {
-=======
-	public void setOrderDate(MyDate orderDate) throws HolidayOrdersNotAllowedException {
->>>>>>> fe512f5f80547992c15809337a099f63c97dc165
 		if (isHoliday(orderDate)) {
 			System.out.println("Order date, " + orderDate + ", cannot be set to a holiday!");
 			throw new HolidayOrdersNotAllowedException(orderDate);
@@ -212,11 +201,7 @@ public class Order {
 		}
 	}
 	
-<<<<<<< HEAD
 	public boolean isHoliday(MyDate orderDate) throws InvalidDateException {
-=======
-	public boolean isHoliday(MyDate orderDate) {
->>>>>>> fe512f5f80547992c15809337a099f63c97dc165
 		int crtYear = LocalDate.now().getYear();
 		
 		if (orderDate.equals(new MyDate(31,12,crtYear))) {
